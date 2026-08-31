@@ -25,23 +25,59 @@ no for every query against any corpus with any model. It is reported because the
 floor belongs in the comparison, but presenting it as a measured result would be
 overclaiming.
 
-## A − B = 0.00pp, and why that is the interesting part
+## The recall-anywhere result, and why it needed a second experiment
 
-The full stack and plain dense retrieval scored **identically** — 215 of 250 each.
+At the full candidate set, the tiers are **identical** — 215 of 250 each. That is
+not because the machinery is worthless; it is because the metric cannot see it. Both
+layers Tier A adds are *ordering* operations, and a scorer asking whether ground
+truth appears *anywhere* in the set is order-insensitive.
 
-That is not because reranking is worthless. It is because **this metric cannot see
-it.** Both layers Tier A adds are *ordering* operations: hybrid merge reorders and
-deduplicates, reranking reorders. The scorer asks only whether ground truth appears
-*anywhere* in the retrieved set. An order-insensitive metric cannot measure
-order-optimising machinery.
+So the first experiment could not answer its own question. The second one can.
 
-So A − B here is not a small delta. It is an **unmeasurable** one, and reporting it
-as "0.0pp improvement" would be as misleading as reporting a fabricated gain.
+## precision@k — what each layer is actually worth
 
-Reranking optimises **precision@k** — what reaches a generator's limited context
-window, and in what order. Measuring that requires a different experiment: answer
-quality under a fixed context budget, or precision at small k. That experiment has
-not been run, so this page does not claim a result from it.
+Scoring the same ordered results at shrinking k makes position matter. **k is not an
+abstraction: it is how many chunks fit in a generator's context budget.**
+
+| tier | k=1 | k=3 | k=5 | k=10 | k=20 |
+|---|---|---|---|---|---|
+| **B** plain dense retrieval | **67.20** | **79.20** | **84.00** | **86.00** | 86.00 |
+| **R** + cross-encoder reranking | 64.40 | 76.00 | 80.80 | 84.80 | 86.00 |
+| **H** + BM25 hybrid merge | 36.00 | 78.80 | 84.80 | 86.00 | 86.00 |
+
+Both added layers **cost** precision rather than adding it, and the columns converge
+by k=20 exactly as they must, since all three see the same candidate set.
+
+**BM25 hybrid merge is the larger problem**: 67.20 → 36.00 at k=1, a 31-point loss.
+Reciprocal-rank fusion is demoting the chunk dense retrieval had ranked first.
+
+**Reranking costs a few points at every k.** That is a real result and it is not the
+one anybody expects from a cross-encoder.
+
+### Reranking was not running at all until this experiment
+
+The rerank function opened with a guard that returned early when the candidate count
+did not exceed the requested budget, on the stated premise that there was "no
+benefit" in that case. The premise is wrong — reranking *reorders*, and order is the
+whole product. The production caller passes a budget of 10, so **every retrieval
+returning ten or fewer chunks skipped reranking silently** while the call site read
+as though it had reranked.
+
+It was caught by measurement rather than by reading: a rerank-only tier scored
+identically to plain dense retrieval at *every* k, to two decimal places. Identical
+to two decimals across the whole sample is the signature of a component that is not
+running, not one that is not helping.
+
+The numbers above are from after the fix. Before it, that row was indistinguishable
+from the baseline.
+
+### A measured but unproven explanation
+
+The reranker scores only the first 512 characters of each chunk. The median retrieved
+chunk is 676 characters and **53% exceed 512**, so it ranks on partial text that the
+scorer then evaluates in full. That is a plausible cause of the degradation. It is
+**not proven** — confirming it needs a run with a wider window, which has not been
+done, so this page does not claim it as the answer.
 
 ## Two bugs found before the number was trusted
 
