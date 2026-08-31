@@ -1,0 +1,41 @@
+# Runs the example's own tests.
+#
+# Deliberately NOT a boundary/secret scan. The private system has one, and it
+# stays private: a gate names every identifier it protects, so a public workflow
+# referencing those patterns would publish the inventory it exists to defend.
+#
+# CI is also the wrong control point for that job independent of the leak. It
+# fires *after* the push, and you cannot un-publish. A blocking check has to run
+# before the push, which means locally, which means privately.
+#
+# What CI is good for here: proving the published example still runs. The example
+# is the claim this repo makes, and a stale example is a broken claim.
+
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: python -m pip install --upgrade pip pytest chromadb sentence-transformers
+
+      - name: Unit tests
+        run: python -m pytest example/tests/ -q
+
+      # The unit tests stub nothing, but they also never touch the embedding
+      # model or the corpus on disk. This step is what catches "the example no
+      # longer runs" -- a class of breakage the unit tests cannot see, and the
+      # one that actually matters to someone who cloned this repo.
+      - name: End-to-end retrieval
+        run: python -m example.retrieve "national 30-day readmission rate for heart failure"
