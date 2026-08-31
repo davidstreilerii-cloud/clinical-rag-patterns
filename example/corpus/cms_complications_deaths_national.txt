@@ -1,0 +1,48 @@
+# Source: https://data.cms.gov/provider-data/api/1/datastore/query/qqw3-t4ie/0?limit=200&count=true&results=true&format=json
+# Retrieved: 2026-08-20
+# Published/effective: Released 2026-08-13; dataset last modified 2026-07-22; first issued 2020-12-10. All three dates read from the CMS provider-data catalog at https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items, entry identifier 'qqw3-t4ie', fields "released", "modified" and "issued". Each measure below also carries its own measurement period, shown per row.
+# Subset: All 20 rows of the 'Complications and Deaths - National' table, complete, unfiltered. Fields used: measure_id, measure_name, national_rate, start_date, end_date.
+
+
+MEDICARE COMPLICATIONS AND DEATHS -- NATIONAL RATES
+
+Scope note: NATIONAL rates across all reporting hospitals; no facility is named.
+
+Units differ by measure family and are not interchangeable:
+  * MORT_30_* and Hybrid_HWM  - deaths per 100 discharges (risk standardised)
+  * COMP_HIP_KNEE             - complications per 100 discharges
+  * PSI_03 .. PSI_15          - AHRQ Patient Safety Indicators, events per 1,000
+                                eligible discharges (PSI_04 is per 1,000 at-risk
+                                surgical discharges, which is why it reads in the
+                                hundreds rather than in single digits)
+  * PSI_90                    - a weighted composite index, not a rate. A value of
+                                1.00 is the national reference point by construction.
+
+Measure ID       National value   Measurement period          Measure
+---------------- ---------------- --------------------------- -------
+COMP_HIP_KNEE                 4.1 2023-04-01 to 2025-03-31   Rate of complications for hip/knee replacement patients
+Hybrid_HWM                    3.9 2024-07-01 to 2025-06-30   Hybrid Hospital-Wide All-Cause Risk Standardized Mortality Rate
+MORT_30_AMI                  11.9 2022-07-01 to 2025-06-30   Death rate for heart attack patients
+MORT_30_CABG                  2.4 2022-07-01 to 2025-06-30   Death rate for CABG surgery patients
+MORT_30_COPD                  8.6 2022-07-01 to 2025-06-30   Death rate for COPD patients
+MORT_30_HF                   11.1 2022-07-01 to 2025-06-30   Death rate for heart failure patients
+MORT_30_PN                   15.2 2022-07-01 to 2025-06-30   Death rate for pneumonia patients
+MORT_30_STK                  11.9 2023-07-01 to 2025-06-30   Death rate for stroke patients
+PSI_03                       0.63 2022-07-01 to 2024-06-30   Pressure ulcer rate
+PSI_04                     173.30 2022-07-01 to 2024-06-30   Death rate among surgical inpatients with serious treatable complications
+PSI_06                       0.21 2022-07-01 to 2024-06-30   Iatrogenic pneumothorax rate
+PSI_08                       0.27 2022-07-01 to 2024-06-30   In-hospital fall-associated fracture rate
+PSI_09                       2.34 2022-07-01 to 2024-06-30   Postoperative hemorrhage or hematoma rate
+PSI_10                       1.67 2022-07-01 to 2024-06-30   Postoperative acute kidney injury requiring dialysis rate
+PSI_11                       9.42 2022-07-01 to 2024-06-30   Postoperative respiratory failure rate
+PSI_12                       3.52 2022-07-01 to 2024-06-30   Perioperative pulmonary embolism or deep vein thrombosis rate
+PSI_13                       5.27 2022-07-01 to 2024-06-30   Postoperative sepsis rate
+PSI_14                       1.77 2022-07-01 to 2024-06-30   Postoperative wound dehiscence rate
+PSI_15                       1.06 2022-07-01 to 2024-06-30   Abdominopelvic accidental puncture or laceration rate
+PSI_90                       1.00 2022-07-01 to 2024-06-30   CMS Medicare PSI 90: Patient safety and adverse events composite
+
+Provenance caution worth carrying: the hospital-level counterpart to this table
+is dataset ynj2-r877, 'Complications and Deaths - Hospital'. It is facility-level,
+it carries facility name, address and telephone number, and it contains no DRG
+codes, no relative weights and no length-of-stay fields. It is not an IPPS or
+MS-DRG pricing dataset and cannot be used as one.

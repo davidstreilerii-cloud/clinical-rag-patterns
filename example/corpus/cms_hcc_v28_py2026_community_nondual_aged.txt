@@ -1,0 +1,161 @@
+# Source: https://www.cms.gov/files/zip/2026-midyear-final-model-software.zip  ->  member 'CMS-HCC software V2826.115.T1.zip'  ->  member 'C2824T2N.csv'  (linked from https://www.cms.gov/medicare/payment/medicare-advantage-rates-statistics/risk-adjustment/2026-model-software-icd-10-mappings)
+# Retrieved: 2026-08-20
+# Published/effective: Payment Year 2026. Established by reading the file 'HCC software V2826.115.T1 description.docx' shipped inside the same archive, whose first sentence is: 'The following is an overview of the software for the 2024 Version 28 CMS-HCC risk-adjustment model for Payment Year 2026.' Corroborating timestamps: the outer archive's members are dated 2025-11-18, the description document 2025-11-05, and the coefficient file C2824T2N.csv 2025-05-05. This is the mid-year final release for PY2026; an initial release for the same payment year is posted separately on the same page.
+# Subset: C2824T2N.csv contains 1237 coefficient rows spanning all 9 model segments (prefixes CNA, CND, CFA, CFD, CPA, CPD, INS, NE, SNPNE). Reproduced here: the 115 payment-HCC coefficients of ONE segment, CNA = Community Non-Dual Aged, in full and in HCC-number order. Demographic, disease-interaction and HCC-count coefficients for that segment are present in the file but are NOT reproduced here. Fields used: Name, Coeff, Label.
+
+
+CMS-HCC VERSION 28 RISK-ADJUSTMENT COEFFICIENTS -- PAYMENT YEAR 2026
+SEGMENT: COMMUNITY NON-DUAL AGED (CNA)
+
+Scope note: national model coefficients. No beneficiary, plan or provider is
+involved. A coefficient is the additive contribution of that HCC to the raw risk
+score for a beneficiary in this segment.
+
+The nine segments in the V28 model are: Community Non-Dual Aged, Community
+Non-Dual Disabled, Community Full Benefit Dual Aged, Community Full Benefit Dual
+Disabled, Community Partial Benefit Dual Aged, Community Partial Benefit Dual
+Disabled, Institutional, New Enrollee, and C-SNP New Enrollee. Coefficients differ
+between segments; a coefficient quoted without its segment is not interpretable.
+
+V28 renumbered the HCCs relative to V24, and the numbers do NOT carry over. In
+V28 the diabetes categories are HCC36 / HCC37 / HCC38 and the heart failure
+categories are HCC222 through HCC226. Checked against this file: there is no
+payment HCC 85 in V28 at all, and HCC111 does exist but is Hemophilia/Male --
+a number surviving into V28 attached to an entirely different condition is more
+dangerous than a number that simply disappeared.
+
+All 115 V28 payment HCCs for this segment:
+
+HCC        Coefficient   Condition category
+---------- ------------- ------------------
+HCC1               0.301   HIV/AIDS
+HCC2               0.500   Septicemia/Sepsis/Systemic Inflammatory Response Syndrome/Shock
+HCC6               0.381   Opportunistic Infections
+HCC17              4.209   Cancer Metastatic to Lung/Liver/Brain/and Other Organs; Acute Myeloid Leukemia Except Promyelocytic
+HCC18              2.341   Cancer Metastatic to Bone/Other and Unspecified Metastatic Cancer; Acute Leukemia Except Myeloid
+HCC19              1.798   Myelodysplastic Syndromes/Multiple Myeloma/and Other Cancers
+HCC20              1.136   Lung and Other Severe Cancers
+HCC21              0.671   Lymphoma and Other Cancers
+HCC22              0.363   Bladder/Colorectal/and Other Cancers
+HCC23              0.186   Prostate/Breast/and Other Cancers and Tumors
+HCC35              0.949   Pancreas Transplant Status
+HCC36              0.166   Diabetes with Severe Acute Complications
+HCC37              0.166   Diabetes with Chronic Complications
+HCC38              0.166   Diabetes with Glycemic/Unspecified/No Complications
+HCC48              0.186   Morbid Obesity
+HCC49              9.256   Specified Lysosomal Storage Disorders
+HCC50              0.648   Amyloidosis/Porphyria/and Other Specified Metabolic Disorders
+HCC51              0.510   Addisons and Cushings Diseases/Acromegaly/and Other Specified Endocrine Disorders
+HCC62              0.376   Liver Transplant Status/Complications
+HCC63              0.962   Chronic Liver Failure/End-Stage Liver Disorders
+HCC64              0.447   Cirrhosis of Liver
+HCC65              0.185   Chronic Hepatitis
+HCC68              0.388   Cholangitis and Obstruction of Bile Duct Without Gallstones
+HCC77              1.172   Intestine Transplant Status/Complications
+HCC78              0.326   Intestinal Obstruction/Perforation
+HCC79              0.357   Chronic Pancreatitis
+HCC80              0.550   Crohns Disease (Regional Enteritis)
+HCC81              0.244   Ulcerative Colitis
+HCC92              0.479   Bone/Joint/Muscle/Severe Soft Tissue Infections/Necrosis
+HCC93              0.617   Rheumatoid Arthritis and Other Specified Inflammatory Rheumatic Disorders
+HCC94              0.268   Systemic Lupus Erythematosus and Other Specified Systemic Connective Tissue Disorders
+HCC107             0.457   Sickle Cell Anemia (Hb-SS) and Thalassemia Beta Zero
+HCC108             0.146   Sickle Cell Disorders/Except Sickle Cell Anemia (Hb-SS) and Thalassemia Beta Zero; Beta Thalassemia Major
+HCC109             1.144   Acquired Hemolytic/Aplastic/and Sideroblastic Anemias
+HCC111             4.639   Hemophilia/Male
+HCC112             0.450   Immune Thrombocytopenia and Specified Coagulation Defects and Hemorrhagic Conditions
+HCC114             2.262   Common Variable and Combined Immunodeficiencies
+HCC115             0.565   Specified Immunodeficiencies and White Blood Cell Disorders
+HCC125             0.341   Dementia/Severe
+HCC126             0.341   Dementia/Moderate
+HCC127             0.341   Dementia/Mild or Unspecified
+HCC135             0.424   Drug Use with Psychotic Complications
+HCC136             0.424   Alcohol Use with Psychotic Complications
+HCC137             0.424   Drug Use Disorder/Moderate/Severe/Drug Use with Non-Psychotic Complications
+HCC138             0.423   Drug Use Disorder/Mild/Uncomplicated/Except Cannabis
+HCC139             0.242   Alcohol Use Disorder/Moderate/Severe/Alcohol Use with Specified Non-Psychotic Complications
+HCC151             0.511   Schizophrenia
+HCC152             0.484   Psychosis/Except Schizophrenia
+HCC153             0.396   Personality Disorders; Anorexia/Bulimia Nervosa
+HCC154             0.351   Bipolar Disorders without Psychosis
+HCC155             0.299   Major Depression/Moderate or Severe/without Psychosis
+HCC180             1.125   Quadriplegia
+HCC181             0.942   Paraplegia
+HCC182             0.478   Spinal Cord Disorders/Injuries
+HCC190             1.175   Amyotrophic Lateral Sclerosis and Other Motor Neuron Disease/Spinal Muscular Atrophy
+HCC191             0.855   Quadriplegic Cerebral Palsy
+HCC192             0.314   Cerebral Palsy/Except Quadriplegic
+HCC193             1.692   Chronic Inflammatory Demyelinating Polyneuritis and Multifocal Motor Neuropathy
+HCC195             2.909   Myasthenia Gravis with (Acute) Exacerbation
+HCC196             0.516   Myasthenia Gravis without (Acute) Exacerbation and Other Myoneural Disorders
+HCC197             0.426   Muscular Dystrophy
+HCC198             0.647   Multiple Sclerosis
+HCC199             0.615   Parkinson and Other Degenerative Disease of Basal Ganglia
+HCC200             0.279   Friedreich and Other Hereditary Ataxias; Huntington Disease
+HCC201             0.245   Seizure Disorders and Convulsions
+HCC202             0.543   Coma/Brain Compression/Anoxic Damage
+HCC211             0.879   Respirator Dependence/Tracheostomy Status/Complications
+HCC212             0.370   Respiratory Arrest
+HCC213             0.370   Cardio-Respiratory Failure and Shock
+HCC221             1.053   Heart Transplant Status/Complications
+HCC222             2.505   End-Stage Heart Failure
+HCC223             2.505   Heart Failure with Heart Assist Device/Artificial Heart
+HCC224             0.360   Acute on Chronic Heart Failure
+HCC225             0.360   Acute Heart Failure (Excludes Acute on Chronic)
+HCC226             0.360   Heart Failure/Except End-Stage and Acute
+HCC227             0.189   Cardiomyopathy/Myocarditis
+HCC228             0.252   Acute Myocardial Infarction
+HCC229             0.240   Unstable Angina and Other Acute Ischemic Heart Disease
+HCC238             0.299   Specified Heart Arrhythmias
+HCC248             0.239   Intracranial Hemorrhage
+HCC249             0.239   Ischemic or Unspecified Stroke
+HCC253             0.387   Hemiplegia/Hemiparesis
+HCC254             0.321   Monoplegia/Other Paralytic Syndromes
+HCC263             1.118   Atherosclerosis of Arteries of the Extremities with Ulceration or Gangrene
+HCC264             0.455   Vascular Disease with Complications
+HCC267             0.294   Deep Vein Thrombosis and Pulmonary Embolism
+HCC276             2.531   Lung Transplant Status/Complications
+HCC277             0.998   Cystic Fibrosis
+HCC278             0.818   Idiopathic Pulmonary Fibrosis and Lung Involvement in Systemic Sclerosis
+HCC279             0.818   Severe Persistent Asthma
+HCC280             0.319   Chronic Obstructive Pulmonary Disease/Interstitial Lung Disorders/and Other Chronic Lung Disorders
+HCC282             0.440   Aspiration and Specified Bacterial Pneumonias
+HCC283             0.204   Empyema/Lung Abscess
+HCC298             0.336   Severe Diabetic Eye Disease/Retinal Vein Occlusion/and Vitreous Hemorrhage
+HCC300             0.596   Exudative Macular Degeneration
+HCC326             0.815   Chronic Kidney Disease/Stage 5
+HCC327             0.514   Chronic Kidney Disease/Severe (Stage 4)
+HCC328             0.127   Chronic Kidney Disease/Moderate (Stage 3B)
+HCC329             0.127   Chronic Kidney Disease/Moderate (Stage 3/Except 3B)
+HCC379             1.965   Pressure Ulcer of Skin with Necrosis Through to Muscle/Tendon/Bone
+HCC380             1.078   Chronic Ulcer of Skin/Except Pressure/Through to Bone or Muscle
+HCC381             1.075   Pressure Ulcer of Skin with Full Thickness Skin Loss
+HCC382             0.838   Pressure Ulcer of Skin with Partial Thickness Skin Loss
+HCC383             0.646   Chronic Ulcer of Skin/Except Pressure/Not Specified as Through to Bone or Muscle
+HCC385             1.291   Severe Skin Burn
+HCC387             0.406   Pemphigus/Pemphigoid/and Other Specified Autoimmune Skin Disorders
+HCC397             0.199   Major Head Injury with Loss of Consciousness > 1 Hour
+HCC398             0.199   Major Head Injury with Loss of Consciousness < 1 Hour or Unspecified
+HCC399             0.199   Major Head Injury without Loss of Consciousness
+HCC401             0.522   Vertebral Fractures without Spinal Cord Injury
+HCC402             0.467   Hip Fracture/Dislocation
+HCC405             0.598   Traumatic Amputations and Complications
+HCC409             0.598   Amputation Status/Lower Limb/Amputation Complications
+HCC454             1.068   Stem Cell/Including Bone Marrow/Transplant Status/Complications
+HCC463             0.673   Artificial Openings for Feeding or Elimination
+
+How to read the coefficient magnitudes, computed from the rows above:
+  * Largest three: HCC49 Specified Lysosomal Storage Disorders at 9.256,
+    HCC111 Hemophilia/Male at 4.639, HCC17 metastatic cancer to lung, liver,
+    brain and other organs at 4.209. The top two are rare conditions with very
+    high drug costs, not common ones.
+  * Smallest: HCC328 Chronic Kidney Disease Moderate (Stage 3B) at 0.127.
+  * The three diabetes categories all carry 0.166. In this model, documenting a
+    chronic complication does not by itself raise the diabetes contribution,
+    though it may map the encounter to additional distinct HCCs and to the
+    diabetes-heart-failure interaction term (not reproduced here).
+  * HCC224, HCC225 and HCC226 all carry 0.360; the separation in heart failure
+    payment sits at HCC222 End-Stage and HCC223 assist device, both 2.505.
+
+A coefficient near 0.2 is a routine chronic condition. A coefficient above 4 is
+rare and expensive. Nothing in this segment sits between 4.639 and 9.256.

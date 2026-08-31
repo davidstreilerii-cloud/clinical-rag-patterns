@@ -1,0 +1,61 @@
+# Source: https://downloads.cms.gov/medicare-coverage-database/downloads/exports/current_lcd.zip  ->  member 'current_lcd_csv.zip'  ->  members 'lcd.csv', 'lcd_x_contractor.csv', 'contractor.csv'  (linked from https://www.cms.gov/medicare-coverage-database/downloads/downloadable-databases.aspx)
+# Retrieved: 2026-08-20
+# Published/effective: Export build date 2026-08-17, taken from the zip member timestamps of 'current_lcd.mdb' and 'current_lcd_csv.zip' inside current_lcd.zip. Each LCD carries its own original determination effective date (orig_det_eff_date) and revision effective date (rev_eff_date); both are reproduced per row below.
+# Subset: The 'current' LCD export contains 949 LCD records, one per lcd_id. Reproduced here: all 17 records sharing the single most common title in the export, 'Botulinum Toxin Injections' -- chosen by frequency, not by topic preference. Of those 17, 6 are final LCDs and 11 are proposed/draft records (see the display_id note below); the table marks which is which rather than conflating them. Fields used: lcd_id, lcd_version, display_id, title, orig_det_eff_date, rev_eff_date, and contractor_bus_name joined through lcd_x_contractor. The public 'L number' is lcd_id, verified against the live record for L33822, whose page title at https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=33822 reads 'LCD - Glucose Monitors (L33822)'. display_id is a POINTER field, populated on only 91 of the 949 rows. Its meaning was established by fetching the live pages for lcd_id 39835, 39858, 39908, 40350 and 40353: every one returns a page titled 'Proposed LCD - ... (DL<display_id>)'. So a populated display_id marks a PROPOSED (draft) LCD and names the final LCD it corresponds to. It does not mark a superseded record. DELIBERATELY EXCLUDED: the policy body fields (indication, coding_guidelines, doc_reqs and the HCPCS/CPT cross-reference tables). LCD policy text carries AMA-licensed CPT content, so this document is an index only and contains no procedure codes and no coverage criteria. Also excluded from contractor.csv: contractor street address, phone, fax, and the named contractor medical director. Only the organisation's business name is used.
+
+
+MEDICARE LOCAL COVERAGE DETERMINATIONS -- ONE POLICY TOPIC ACROSS CONTRACTORS
+TOPIC: Botulinum Toxin Injections
+
+Scope note: an LCD is issued by ONE Medicare Administrative Contractor and binds
+only that contractor's jurisdiction. This is the opposite of a National Coverage
+Determination. The table below is the whole point: one clinical topic, and
+six separate FINAL LCDs held by five different contractor organisations, plus
+eleven proposed/draft records attached to them.
+
+Consequences that follow directly from this table:
+  * An LCD identifier is meaningless without its contractor. 'The L number for
+    botulinum toxin' is not a well-formed question -- there are six.
+  * LCD numbers cannot be inferred, guessed, or pattern-matched. They are
+    assigned, and adjacent numbers are unrelated policies.
+  * Effective dates differ across contractors for the same topic, so 'the current
+    policy' depends on where the beneficiary is. Here the revision effective dates
+    are not all the same.
+  * A draft LCD is not a policy. Eleven of the seventeen rows below are proposals.
+    Quoting one as though it were in force would be wrong on its face.
+
+A blank 'Draft of' column means the row IS a final LCD.
+
+LCD        Ver  Draft of       Original eff.  Revision eff.  Issuing contractor
+---------- ---- -------------- -------------- -------------- ------------------
+L35170     60   -              2015-10-01     2026-02-22     Noridian Healthcare Solutions, LLC
+L35172     72   -              2015-10-01     2026-02-22     Noridian Healthcare Solutions, LLC
+L39832     15   -              2026-02-22     2026-02-22     Wellpoint Federal
+L39835     10   DL39836        -              -              Palmetto GBA
+L39836     8    -              2026-02-22     2026-02-22     Palmetto GBA
+L39856     3    DL39857        -              -              CGS Administrators, LLC
+L39857     7    -              2026-02-22     2026-02-22     CGS Administrators, LLC
+L39858     4    DL35170        -              -              Noridian Healthcare Solutions, LLC
+L39859     4    DL35172        -              -              Noridian Healthcare Solutions, LLC
+L39908     2    DL39909        -              -              Wisconsin Physicians Service Insurance Corporation
+L39909     6    -              2026-02-22     2026-04-02     Wisconsin Physicians Service Insurance Corporation
+L40350     15   DL39832        -              -              National Government Services, Inc.
+L40352     6    DL39836        -              -              Palmetto GBA
+L40353     6    DL35170        -              -              Noridian Healthcare Solutions, LLC
+L40354     4    DL35172        -              -              Noridian Healthcare Solutions, LLC
+L40376     6    DL39857        -              -              CGS Administrators, LLC
+L40381     4    DL39909        -              -              Wisconsin Physicians Service Insurance Corporation
+
+Reading the table: 6 of these 17 rows are final LCDs,
+carrying their own effective dates. The other 11 are proposed LCDs; each names
+the final LCD it is a draft of and has no effective dates, because a proposal has
+no effect. A single final LCD can have more than one draft in the export -- L35170
+has two (L39858 and L40353), which are successive proposal rounds.
+
+Noridian appears against two final LCDs, L35170 and L35172. The export does not
+say why in these fields; a contractor can administer more than one jurisdiction.
+That explanation is not asserted by this data.
+
+To read any of these policies you must go to the Medicare Coverage Database and
+open the specific LCD for the specific jurisdiction. This corpus does not carry
+their text.

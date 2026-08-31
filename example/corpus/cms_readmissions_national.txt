@@ -1,0 +1,45 @@
+# Source: https://data.cms.gov/provider-data/api/1/datastore/query/cvcs-xecj/0?limit=200&count=true&results=true&format=json
+# Retrieved: 2026-08-20
+# Published/effective: Released 2026-08-13; dataset last modified 2026-07-22; first issued 2020-12-10. All three dates read from the CMS provider-data catalog at https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items, entry identifier 'cvcs-xecj', fields "released", "modified" and "issued". Each measure below also carries its own measurement period, shown per row.
+# Subset: All 14 rows of the 'Unplanned Hospital Visits - National' table, complete, unfiltered. Fields used: measure_id, measure_name, national_rate, start_date, end_date. Rows whose national_rate CMS publishes as 'Not Applicable' or 'Not Available' are reproduced with that literal value rather than dropped.
+
+
+MEDICARE UNPLANNED HOSPITAL VISITS -- NATIONAL RATES
+
+Scope note: every number here is a NATIONAL rate computed by CMS across all
+reporting hospitals. It is not any one hospital's score. The companion
+hospital-level table (dataset 632h-zaca) has no national_rate column at all --
+a per-facility 'score' column is the only rate it carries, and that column is
+one facility's number, never a benchmark.
+
+Readmission rates are expressed as readmissions per 100 discharges. The OP_32,
+OP_35 and OP_36 measures use their own denominators, named in the measure text.
+
+Measure ID            National rate   Measurement period          Measure
+--------------------- --------------- --------------------------- -------
+EDAC_30_AMI            Not Applicable 2022-07-01 to 2025-06-30   Hospital return days for heart attack patients
+EDAC_30_HF             Not Applicable 2022-07-01 to 2025-06-30   Hospital return days for heart failure patients
+EDAC_30_PN             Not Applicable 2022-07-01 to 2025-06-30   Hospital return days for pneumonia patients
+Hybrid_HWR              Not Available 2024-07-01 to 2025-06-30   Hybrid Hospital-Wide All-Cause Readmission Measure (HWR)
+OP_32                              13 2022-01-01 to 2024-12-31   Rate of unplanned hospital visits after colonoscopy (per 1,000 colonoscopies)
+OP_35_ADM                        10.7 2024-01-01 to 2024-12-31   Rate of inpatient admissions for patients receiving outpatient chemotherapy
+OP_35_ED                          5.4 2024-01-01 to 2024-12-31   Rate of emergency department (ED) visits for patients receiving outpatient chemotherapy
+OP_36                  Not Applicable 2024-01-01 to 2024-12-31   Ratio of unplanned hospital visits after hospital outpatient surgery
+READM_30_AMI                     14.4 2023-07-01 to 2025-06-30   Acute Myocardial Infarction (AMI) 30-Day Readmission Rate
+READM_30_CABG                      11 2023-07-01 to 2025-06-30   Rate of readmission for CABG
+READM_30_COPD                      20 2023-07-01 to 2025-06-30   Rate of readmission for chronic obstructive pulmonary disease (COPD) patients
+READM_30_HF                      21.3 2023-07-01 to 2025-06-30   Heart failure (HF) 30-Day Readmission Rate
+READM_30_HIP_KNEE                 5.8 2023-07-01 to 2025-06-30   Rate of readmission after hip/knee replacement
+READM_30_PN                      17.3 2023-07-01 to 2025-06-30   Pneumonia (PN) 30-Day Readmission Rate
+
+Notes on the blanks, taken from the published values rather than filled in:
+  * The three EDAC_30 measures and OP_36 are published as 'Not Applicable'.
+    EDAC is an excess-days measure, expressed as days per 100 discharges relative
+    to expectation, so a single national rate is not defined for it. The row still
+    carries hospital counts (fewer / average / more than expected).
+  * Hybrid_HWR is published as 'Not Available' for this reporting period.
+
+Background, not asserted by this dataset: the six READM_30 cohorts here -- heart
+attack, heart failure, pneumonia, COPD, hip/knee replacement, CABG -- are the same
+six the Hospital Readmissions Reduction Program penalises on. This table does not
+say so; it is context for why these six and not others.

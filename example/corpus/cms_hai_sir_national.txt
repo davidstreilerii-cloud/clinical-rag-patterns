@@ -1,0 +1,39 @@
+# Source: https://data.cms.gov/provider-data/api/1/datastore/query/yd3s-jyhd/0?limit=200&count=true&results=true&format=json
+# Retrieved: 2026-08-20
+# Published/effective: Released 2026-08-13; dataset last modified 2026-07-22; first issued 2020-12-10. All three dates read from the CMS provider-data catalog at https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items, entry identifier 'yd3s-jyhd', fields "released", "modified" and "issued". Each measure below also carries its own measurement period, shown per row.
+# Subset: All 6 rows of the 'Healthcare Associated Infections - National' table, complete, unfiltered. Fields used: measure_id, measure_name, score, start_date, end_date. The score column was cross-checked against the CSV distribution at https://data.cms.gov/provider-data/sites/default/files/resources/a87585b27c50c3899eec6a857958a5f0_1785189953/Healthcare_Associated_Infections-National.csv to confirm the published precision; both give the same values.
+
+
+CMS HEALTHCARE-ASSOCIATED INFECTION STANDARDISED INFECTION RATIOS -- NATIONAL
+
+Scope note: NATIONAL values. No facility is named.
+
+A Standardised Infection Ratio (SIR) is observed infections divided by the number
+predicted from the NHSN baseline for the same case mix. Above 1 is worse than
+predicted, below 1 is better.
+
+Measure ID   National SIR   Measurement period          Infection type
+------------ -------------- --------------------------- --------------
+HAI_1_SIR                 1 2024-10-01 to 2025-09-30   Central Line Associated Bloodstream Infection (ICU + select Wards)
+HAI_2_SIR                 1 2024-10-01 to 2025-09-30   Catheter Associated Urinary Tract Infections (ICU + select Wards)
+HAI_3_SIR                 1 2024-10-01 to 2025-09-30   SSI - Colon Surgery
+HAI_4_SIR                 1 2024-10-01 to 2025-09-30   SSI - Abdominal Hysterectomy
+HAI_5_SIR                 1 2024-10-01 to 2025-09-30   MRSA Bacteremia
+HAI_6_SIR                 1 2024-10-01 to 2025-09-30   Clostridium Difficile (C.Diff)
+
+IMPORTANT, and the reason this short table is worth including:
+
+OBSERVED FACT: CMS publishes the national value as a bare '1' for all six
+measures, with no decimal places. The JSON API and the CSV distribution agree,
+so this is the published precision and not a transport artefact. No more precise
+national figure is available from this source.
+
+LIKELY EXPLANATION, stated as inference and NOT as something this source says:
+an SIR is normalised against a baseline, so a national aggregate landing at the
+reference point of 1 is what you would expect. This corpus does not carry the
+NHSN documentation that would confirm it, and no attempt was made here to derive
+the value independently.
+
+Either way, the operational consequence holds: do not quote a spread of national
+SIR values across infection types from this table. It does not contain one.
+Facility-level and state-level SIRs do vary and are published elsewhere.

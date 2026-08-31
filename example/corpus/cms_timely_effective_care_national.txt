@@ -1,0 +1,73 @@
+# Source: https://data.cms.gov/provider-data/api/1/datastore/query/isrn-hqyy/0?limit=200&count=true&results=true&format=json
+# Retrieved: 2026-08-20
+# Published/effective: Released 2026-08-13; dataset last modified 2026-07-22; first issued 2020-12-10. All three dates read from the CMS provider-data catalog at https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items, entry identifier 'isrn-hqyy', fields "released", "modified" and "issued". Each measure below also carries its own measurement period, shown per row.
+# Subset: All 45 rows of the 'Timely and Effective Care - National' table, complete, unfiltered. Fields used: measure_id, measure_name, _condition, score, start_date, end_date.
+
+
+MEDICARE TIMELY AND EFFECTIVE CARE -- NATIONAL PROCESS MEASURES
+
+Scope note: NATIONAL values. No facility is named.
+
+These are PROCESS measures -- did the care happen, and how fast -- as opposed to
+the outcome measures in the readmission and mortality tables. Units vary by
+measure and are given per row:
+  * OP_18* scores are minutes (median emergency department time).
+  * SEP_*, SEV_SEP_*, OP_22, OP_23, OP_29, OP_31, IMM_3 and SAFE_USE_OF_OPIOIDS
+    scores are proportions out of 100.
+  * A measure ID ending _NINETIETH is the top-decile hospital value for the same
+    measure, not a separate measure. It is the achievable benchmark.
+
+Measure ID                      Score   Measurement period          Condition / measure
+------------------------------- ------- --------------------------- -------------------
+IMM_3                                78 2024-10-01 to 2025-03-31   [Healthcare Personnel Vaccination] Healthcare workers given influenza vaccination Higher percentages are better
+OP_18a                              168 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better
+OP_18a_HIGH_MIN                     207 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better (High)
+OP_18a_LOW_MIN                      130 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better (Low)
+OP_18a_MEDIUM_MIN                   170 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better (Moderate)
+OP_18a_NINETIETH                    105 2024-10-01 to 2025-09-30   [Emergency Department] Top ten percent time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better
+OP_18a_VERY_HIGH_MIN                205 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time all patients spent in the emergency department before leaving from the visit, including psychiatric/mental health patients and patients who were transferred to another facility. A lower number of minutes is better (Very High)
+OP_18b                              162 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better
+OP_18b_HIGH_MIN                     202 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better (High)
+OP_18b_LOW_MIN                      123 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better (Low)
+OP_18b_MEDIUM_MIN                   165 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better (Moderate)
+OP_18b_NINETIETH                    100 2024-10-01 to 2025-09-30   [Emergency Department] Top ten percent time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better
+OP_18b_VERY_HIGH_MIN                201 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before leaving from the visit, excluding patients transferred to another facility or psychiatric care/mental health patients. A lower number of minutes is better (Very High)
+OP_18c                              257 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better
+OP_18c_HIGH_MIN                     305 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better (High)
+OP_18c_LOW_MIN                      195 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better (Low)
+OP_18c_MEDIUM_MIN                   253 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better (Moderate)
+OP_18c_NINETIETH                    129 2024-10-01 to 2025-09-30   [Emergency Department] Top ten percent time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better
+OP_18c_VERY_HIGH_MIN                308 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time psychiatric/mental health patients spent in the emergency department before leaving from the visit. A lower number of minutes is better (Very High)
+OP_18d                              287 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better
+OP_18d_HIGH_MIN                     338 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better (High)
+OP_18d_LOW_MIN                      264 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better (Low)
+OP_18d_MEDIUM_MIN                   334 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better (Moderate)
+OP_18d_NINETIETH                    187 2024-10-01 to 2025-09-30   [Emergency Department] Top ten percent time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better
+OP_18d_VERY_HIGH_MIN                363 2024-10-01 to 2025-09-30   [Emergency Department] Average (median) time patients spent in the emergency department before being transferred to another facility. A lower number of minutes is better (Very High)
+OP_22                                 2 2024-01-01 to 2024-12-31   [Emergency Department] Percentage of patients who left the emergency department before being seen Lower percentages are better
+OP_22_NINETIETH                       0 2024-01-01 to 2024-12-31   [Emergency Department] Top ten percent patients who left the emergency department before being seen Lower percentages are better
+OP_23                                69 2024-10-01 to 2025-09-30   [Emergency Department] Percentage of patients who came to the emergency department with stroke symptoms who received brain scan results within 45 minutes of arrival Higher percentages are better
+OP_23_NINETIETH                     100 2024-10-01 to 2025-09-30   [Emergency Department] Top ten percent patients who came to the emergency department with stroke symptoms who received brain scan results within 45 minutes of arrival Higher percentages are better
+OP_29                                93 2024-01-01 to 2024-12-31   [Colonoscopy care] Percentage of patients receiving appropriate recommendation for follow-up screening colonoscopy Higher percentages are better
+OP_29_NINETIETH                     100 2024-01-01 to 2024-12-31   [Colonoscopy care] Top ten percent patients receiving appropriate recommendation for follow-up screening colonoscopy Higher percentages are better
+OP_31                                97 2024-01-01 to 2024-12-31   [Cataract surgery outcome] Percentage of patients who had cataract surgery and had improvement in visual function within 90 days following the surgery Higher percentages are better
+OP_31_NINETIETH                     100 2024-01-01 to 2024-12-31   [Cataract surgery outcome] Top ten percent patients who had cataract surgery and had improvement in visual function within 90 days following the surgery Higher percentages are better
+SAFE_USE_OF_OPIOIDS                  15 2024-01-01 to 2024-12-31   [Electronic Clinical Quality Measure] Proportion of inpatient hospitalizations for patients 18 years of age and older prescribed, or continued on, two or more opioids or an opioid and benzodiazepine concurrently at discharge. Lower percentages are better
+SAFE_USE_OF_OPIOIDS_NINETIETH         8 2024-01-01 to 2024-12-31   [Electronic Clinical Quality Measure] Top ten proportion of inpatient hospitalizations for patients 18 years of age and older prescribed, or continued on, two or more opioids or an opioid and benzodiazepine concurrently at discharge. Lower percentages are better
+SEP_1                                65 2024-10-01 to 2025-09-30   [Sepsis Care] Percentage of patients who received appropriate care for severe sepsis and septic shock. Higher percentages are better
+SEP_1_NINETIETH                      83 2024-10-01 to 2025-09-30   [Sepsis Care] Top ten percent patients who received appropriate care for severe sepsis and septic shock. Higher percentages are better
+SEP_SH_3HR                           73 2024-10-01 to 2025-09-30   [Sepsis Care] Septic Shock 3-Hour Bundle
+SEP_SH_3HR_NINETIETH                 96 2024-10-01 to 2025-09-30   [Sepsis Care] Top Ten Percent Septic Shock 3-Hour Bundle
+SEP_SH_6HR                           87 2024-10-01 to 2025-09-30   [Sepsis Care] Septic Shock 6-Hour Bundle
+SEP_SH_6HR_NINETIETH                100 2024-10-01 to 2025-09-30   [Sepsis Care] Top Ten Percent Septic Shock 6-Hour Bundle
+SEV_SEP_3HR                          81 2024-10-01 to 2025-09-30   [Sepsis Care] Severe Sepsis 3-Hour Bundle
+SEV_SEP_3HR_NINETIETH                93 2024-10-01 to 2025-09-30   [Sepsis Care] Top Ten Percent Severe Sepsis 3-Hour Bundle
+SEV_SEP_6HR                          93 2024-10-01 to 2025-09-30   [Sepsis Care] Severe Sepsis 6-Hour Bundle
+SEV_SEP_6HR_NINETIETH               100 2024-10-01 to 2025-09-30   [Sepsis Care] Top Ten Percent Severe Sepsis 6-Hour Bundle
+
+The sepsis block is the one to read carefully. SEP_1 is the composite: it scores
+as passed only if every element of the bundle was delivered in time. The component
+rows -- severe sepsis 3-hour and 6-hour bundles, septic shock 3-hour and 6-hour
+bundles -- score higher individually than the composite does, because the composite
+fails whenever any one element fails. That arithmetic is why sepsis bundle
+compliance is a documentation and timing problem before it is a clinical one.

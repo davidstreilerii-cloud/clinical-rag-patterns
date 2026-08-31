@@ -1,0 +1,62 @@
+# Source: https://data.cms.gov/data-api/v1/dataset/2941ab09-8cee-49d8-9703-f3c5b854e388/data?size=1000&offset=0&filter[Rndrng_Prvdr_Geo_Lvl]=National
+# Retrieved: 2026-08-20
+# Published/effective: Data year 2024 (calendar year discharges). Dataset last modified 2026-04-23 and the distribution is labelled 2024-01-01 -- both read from the CMS catalog file https://data.cms.gov/data.json, entry titled 'Medicare Inpatient Hospitals - by Geography and Service', fields "modified" and the distribution "title". That same entry gives "temporal": 2013-01-01/2024-12-31 for the dataset as a whole.
+# Subset: National geography rows only (Rndrng_Prvdr_Geo_Lvl = National). The filtered query returned 767 MS-DRG rows, one per DRG, and every returned row was National. Reproduced below: the 30 DRGs with the highest Tot_Dschrgs, ranked by that field. Fields shown: DRG_Cd, DRG_Desc, Tot_Dschrgs, Avg_Submtd_Cvrd_Chrg, Avg_Tot_Pymt_Amt, Avg_Mdcr_Pymt_Amt (5 of the 9 columns; the 3 geography columns are constant and Rndrng_Prvdr_Geo_Cd is empty for the national rows).
+
+
+MEDICARE INPATIENT HOSPITALS -- NATIONAL TOTALS BY MS-DRG, DATA YEAR 2024
+
+Scope note: these are NATIONAL aggregates across all Original Medicare Part A
+IPPS discharges. No hospital, provider, or beneficiary is identified. Dollar
+amounts are averages per discharge.
+
+  * Tot_Dschrgs        - total Medicare discharges nationally for that DRG
+  * Avg_Submtd_Cvrd_Chrg - average charge submitted by the hospital
+  * Avg_Tot_Pymt_Amt   - average total payment (Medicare + beneficiary + third party)
+  * Avg_Mdcr_Pymt_Amt  - average amount Medicare itself paid
+
+Note on relative weights: this dataset reports observed discharges and payments.
+It does NOT contain MS-DRG relative weights or geometric mean length of stay.
+Those live in the IPPS Final Rule Table 5, which is a separate publication and is
+not included in this corpus.
+
+The full national set has 767 MS-DRGs. The 30 highest-volume follow.
+
+DRG   Discharges   Avg submitted charge   Avg total payment   Avg Medicare payment   Description
+----- ------------ ---------------------- ------------------- ---------------------- -----------
+871        578,073             90,296.54           18,228.41              15,524.81   SEPTICEMIA OR SEVERE SEPSIS WITHOUT MV >96 HOURS WITH MCC
+291        306,135             56,379.78           12,053.17              10,027.43   HEART FAILURE AND SHOCK WITH MCC
+177        144,162             70,591.54           14,972.04              12,695.36   RESPIRATORY INFECTIONS AND INFLAMMATIONS WITH MCC
+193        139,034             59,757.33           12,049.62               9,899.15   SIMPLE PNEUMONIA AND PLEURISY WITH MCC
+872        107,314             49,048.95           10,090.72               7,700.04   SEPTICEMIA OR SEVERE SEPSIS WITHOUT MV >96 HOURS WITHOUT MCC
+690         95,596             37,820.71            7,850.83               6,019.06   KIDNEY AND URINARY TRACT INFECTIONS WITHOUT MCC
+189         93,765             57,569.55           12,197.97               9,988.76   PULMONARY EDEMA AND RESPIRATORY FAILURE
+392         90,637             40,165.20            7,830.14               5,707.05   ESOPHAGITIS, GASTROENTERITIS AND MISCELLANEOUS DIGESTIVE DISORDERS WITHOUT MCC
+280         87,661             75,821.17           14,781.56              12,392.75   ACUTE MYOCARDIAL INFARCTION, DISCHARGED ALIVE WITH MCC
+689         84,058             51,326.37           10,742.57               8,893.21   KIDNEY AND URINARY TRACT INFECTIONS WITH MCC
+853         83,117            228,948.01           46,477.96              40,410.10   INFECTIOUS AND PARASITIC DISEASES WITH O.R. PROCEDURES WITH MCC
+683         82,248             40,704.96            8,658.10               6,682.05   RENAL FAILURE WITH CC
+378         79,720             48,550.25            9,388.78               7,334.81   GASTROINTESTINAL HEMORRHAGE WITH CC
+698         78,368             73,426.84           15,440.86              13,091.59   OTHER KIDNEY AND URINARY TRACT DIAGNOSES WITH MCC
+640         77,795             60,293.45           12,791.40              10,630.49   MISCELLANEOUS DISORDERS OF NUTRITION, METABOLISM, FLUIDS AND ELECTROLYTES WITH MCC
+682         77,544             65,938.57           13,729.21              11,495.99   RENAL FAILURE WITH MCC
+065         72,656             55,724.23            9,913.60               7,486.19   INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION WITH CC OR TPA IN 24 HOURS
+064         67,329             99,863.93           18,832.20              15,637.88   INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION WITH MCC
+641         66,811             37,057.66            7,789.26               5,890.90   MISCELLANEOUS DISORDERS OF NUTRITION, METABOLISM, FLUIDS AND ELECTROLYTES WITHOUT MCC
+481         66,798            100,756.17           18,493.46              15,837.46   HIP AND FEMUR PROCEDURES EXCEPT MAJOR JOINT WITH CC
+309         65,484             36,114.59            7,304.49               5,325.66   CARDIAC ARRHYTHMIA AND CONDUCTION DISORDERS WITH CC
+470         64,419             93,183.81           17,364.02              14,321.65   MAJOR HIP AND KNEE JOINT REPLACEMENT OR REATTACHMENT OF LOWER EXTREMITY WITHOUT MCC
+603         60,330             37,288.65            8,681.49               6,504.91   CELLULITIS WITHOUT MCC
+274         59,108            156,756.62           27,537.38              24,761.79   PERCUTANEOUS AND OTHER INTRACARDIAC PROCEDURES WITHOUT MCC
+312         57,077             45,535.81            8,562.72               6,666.97   SYNCOPE AND COLLAPSE
+190         55,536             50,592.32           10,596.75               8,495.76   CHRONIC OBSTRUCTIVE PULMONARY DISEASE WITH MCC
+377         55,344             85,390.83           16,677.34              14,272.86   GASTROINTESTINAL HEMORRHAGE WITH MCC
+552         49,460             48,855.21            9,347.40               7,128.27   MEDICAL BACK PROBLEMS WITHOUT MCC
+322         49,040            114,560.16           17,280.22              12,971.22   PERCUTANEOUS CARDIOVASCULAR PROCEDURES WITH INTRALUMINAL DEVICE WITHOUT MCC
+194         48,668             38,378.59            8,027.97               5,976.02   SIMPLE PNEUMONIA AND PLEURISY WITH CC
+
+Read this the way a coder would: DRG 871 (septicemia with MCC) is the single
+highest-volume inpatient Medicare DRG, and the with-MCC / with-CC / without-CC
+triplets that appear repeatedly above are the severity tiers that documentation
+specificity drives. The gap between the average submitted charge and the average
+Medicare payment on any row is the chargemaster-to-payment spread, not a denial.

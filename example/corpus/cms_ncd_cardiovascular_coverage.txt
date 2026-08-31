@@ -1,0 +1,307 @@
+# Source: https://downloads.cms.gov/medicare-coverage-database/downloads/exports/ncd.zip  -> member 'ncd_csv.zip'  -> member 'ncd_trkg.csv'  (linked from https://www.cms.gov/medicare-coverage-database/downloads/downloadable-databases.aspx)
+# Retrieved: 2026-08-20
+# Published/effective: Export build date 2026-08-17, taken from the zip member timestamps of 'ncd.mdb' and 'ncd_csv.zip' inside ncd.zip. Each NCD additionally carries its own effective date in the NCD_efctv_dt column, which is the date reproduced per row below; those range from 1966-01-01 to 2025-10-28 in this subset.
+# Subset: ncd_trkg.csv holds 357 National Coverage Determination records, of which 345 have an empty NCD_trmntn_dt (not terminated). Reproduced here: all 49 non-terminated NCDs whose NCD_mnl_sect begins '20.', the cardiovascular system range -- as an index of section, title, version and effective date; plus the COMPLETE indications-and-limitations text for the 2 of them sharing the most recent effective date in the subset (2025-10-28). All 49 carry NCD_AMA = False, so none is flagged as containing AMA-licensed content. Fields used: NCD_mnl_sect, NCD_mnl_sect_title, NCD_vrsn_num, NCD_efctv_dt, NCD_impltn_dt, NCD_trmntn_dt, trnsmtl_num, trnsmtl_url, pblctn_cd, indctn_lmtn, NCD_AMA. TRANSFORMATIONS APPLIED to indctn_lmtn, and they are the only ones: (a) HTML markup stripped to plain text and HTML entities decoded, so '&ge;' became a greater-or-equal sign and list items became '-' bullets; (b) the percent SIGN replaced by the WORD 'percent' throughout, so '35 percent' reads '35 percent'. No word of CMS's own text was added, removed or reordered. Oddities in the source are reproduced as found -- for example NCD 20.39 reads 'Systolic blood pressure = median versus < median', which is what CMS published.
+
+
+MEDICARE NATIONAL COVERAGE DETERMINATIONS -- CARDIOVASCULAR SYSTEM (SECTION 20)
+
+Scope note: an NCD is a NATIONWIDE Medicare coverage rule. It binds every
+Medicare Administrative Contractor. This is the opposite of a Local Coverage
+Determination, which one contractor issues for its own jurisdiction and which
+may differ across jurisdictions. Where an NCD exists, a contractor cannot
+contradict it.
+
+Publication: 48 of the 49 rows carry pblctn_cd 25, which the companion reference
+table ncd_pblctn_ref.csv maps to publication 100-3, 'National Coverage
+Determinations'. The exception is 20.2, which carries pblctn_cd 26, publication
+100-4, 'Claims Processing'.
+
+'RETIRED' in a title is CMS's own wording, kept verbatim. Three sections carry it
+(20.9, 20.10, 20.25). None is a terminated record -- NCD_trmntn_dt is empty for
+all three -- so they appear here. Their text says what happened: 20.9 was folded
+into 20.9.1, 20.10 was repealed and redirects to Pub. 100-04 chapter 32 section
+140, and 20.25 was repealed with no successor named.
+
+INDEX
+
+Section     Ver   Effective     Title
+----------- ----- ------------- -----
+20.1            1 1966-01-01    Vertebral Artery Surgery
+20.2            1 1991-03-27    Extracranial-Intracranial (EC-IC) Arterial Bypass Surgery
+20.3            1 1966-01-01    Thoracic Duct Drainage (TDD) in Renal Transplants
+20.4            5 2023-07-31    Implantable Cardioverter Defibrillators (ICDs)
+20.6            1 1999-07-01    Transmyocardial Revascularization (TMR)
+20.7           11 2023-10-11    Percutaneous Transluminal Angioplasty (PTA)
+20.8            3 2013-08-13    Cardiac Pacemakers
+20.8.1          1 1984-10-01    Cardiac Pacemaker Evaluation Services
+20.8.1.1        1 2003-10-03    Transtelephonic Monitoring of Cardiac Pacemakers
+20.8.2          1 1966-01-01    Self-Contained Pacemaker Monitors
+20.8.3          2 2013-08-13    Single Chamber and Dual Chamber Permanent Cardiac Pacemakers
+20.8.4          1 2017-01-18    Leadless Pacemakers
+20.9            8 2023-04-10    Artificial Hearts and Related Devices - RETIRED
+20.9.1          2 2020-12-01    Ventricular Assist Devices
+20.10           4 2023-04-10    Cardiac Rehabilitation Programs - RETIRED
+20.10.1         1 2014-02-18    Cardiac Rehabilitation Programs for Chronic Heart Failure
+20.11           1 1984-10-29    Intraoperative Ventricular Mapping
+20.12           1 1984-12-03    Diagnostic Endocardial Electrical Stimulation (Pacing)
+20.13           1 1984-12-03    HIS Bundle Study
+20.14           1 1980-11-15    Plethysmography
+20.15           2 2004-08-26    Electrocardiographic Services
+20.16           3 2006-11-24    Cardiac Output Monitoring by Thoracic Electrical Bioimpedance (TEB)
+20.17           1 1980-11-15    Noninvasive Tests of Carotid Function
+20.18           1 1966-01-01    Carotid Body Resection/Carotid Body Denervation
+20.19           3 2019-07-02    Ambulatory Blood Pressure Monitoring
+20.20           2 2006-03-20    External Counterpulsation (ECP) Therapy for Severe Angina
+20.21           1 1966-01-01    Chelation Therapy for Treatment of Atherosclerosis
+20.22           1 1966-01-01    Ethylenediamine-Tetra-Acetic (EDTA) Chelation Therapy for Treatment of Atherosclerosis
+20.23           1 1966-01-01    Fabric Wrapping of Abdominal Aneurysms
+20.24           1 1988-10-12    Displacement Cardiography
+20.25           3 2023-04-10    Cardiac Catheterization Performed in Other than a Hospital Setting - RETIRED
+20.26           1 1997-04-15    Partial Ventriculectomy
+20.27           1 1966-01-01    Cardiointegram (CIG) as an Alternative to Stress Test or Thallium Stress Test
+20.28           1 1978-12-15    Therapeutic Embolization
+20.29           4 2017-04-03    Hyperbaric Oxygen Therapy
+20.30           3 2015-01-13    Microvolt T-Wave Alternans (MTWA)
+20.31           1 2010-08-12    Intensive Cardiac Rehabilitation (ICR) Programs
+20.31.1         1 2010-08-12    The Pritikin Program
+20.31.2         1 2010-08-12    Ornish Program for Reversing Heart Disease
+20.31.3         1 2014-05-06    Benson-Henry Institute Cardiac Wellness Program
+20.32           2 2019-06-21    Transcatheter Aortic Valve Replacement (TAVR)
+20.33           3 2023-07-31    Transcatheter Edge-to-Edge Repair (TEER) for Mitral Valve Regurgitation
+20.34           1 2016-02-08    Percutaneous Left Atrial Appendage Closure (LAAC)
+20.35           1 2017-05-25    Supervised Exercise Therapy (SET) for Symptomatic Peripheral Artery Disease (PAD)
+20.36           1 2025-01-13    Implantable Pulmonary Artery Pressure Sensors for Heart Failure Management
+20.37           1 2025-03-19    Transcatheter Tricuspid Valve Replacement (TTVR)
+20.38           1 2025-07-02    Transcatheter Edge-to-Edge Repair for Tricuspid Valve Regurgitation (T-TEER)
+20.39           1 2025-10-28    Cardiac Contractility Modulation (CCM) for Heart Failure (HF)
+20.40           1 2025-10-28    Renal Denervation (RDN) for Uncontrolled Hypertension
+
+
+FULL COVERAGE TEXT
+
+Reproduced in full below: the 2 section-20 NCDs whose effective date is
+2025-10-28, the most recent in this chapter.
+
+==============================================================================
+NCD 20.39 -- Cardiac Contractility Modulation (CCM) for Heart Failure (HF)
+Version 1 | Effective 2025-10-28 | Implementation 2026-04-06
+Transmittal 13538 (https://www.cms.gov/files/document/r13538NCD.pdf)
+==============================================================================
+
+B. Nationally Covered Indications
+
+The Centers for Medicare & Medicaid Services (CMS) covers CCM for HF management under Coverage with Evidence Development (CED) when furnished according to a Food and Drug Administration (FDA) market-authorized indication and all of the following conditions are met:
+
+1. Patient Criteria
+
+Patients must meet the FDA market-authorized indications for use and remain symptomatic despite at least 3 months of optimized guideline-directed medical therapy (GDMT) as determined by the heart team prior to CCM implantation.
+
+Patients are excluded from coverage if they meet any of the following criteria:
+
+ - Meet any of the contraindications in the FDA labeling; or,
+
+ - Have had a heart transplant; or,
+
+ - Are younger than 18 years old
+
+2. CED Study Criteria
+
+The CCM and related items and services are furnished in the context of a CMS-approved CED study. CMS-approved CED study protocols must: include only those patients who meet the criteria in section B.1; and include all of the following:
+a) Primary outcomes of all-cause mortality, HF hospitalizations, or a composite of these, through a minimum of 24 months. Each component of a composite outcome must be individually reported.
+
+b) An active comparator.
+
+c) A care management plan that identifies members, roles, and responsibilities of the clinical team that performs the follow-up CCM patient management.
+
+d) Design sufficient for subgroup analyses by:
+
+ - Age (Stratify <65, 65-74, 75+)
+
+ - Other clinically important patient demographic factors
+
+ - Ischemic cardiomyopathy versus non-ischemic cardiomyopathy;
+
+ - No CRT, CRT (cardiac resynchronization therapy);
+
+ - Left ventricular ejection fraction (LVEF) ≥35 percent versus <35 percent;
+
+ - Systolic blood pressure = median versus < median;
+
+ - Diabetic vs non-diabetic
+
+e) In addition, CMS-approved CED studies must adhere to the following scientific standards (criteria 1-17 below) that have been identified by the Agency for Healthcare Research and Quality (AHRQ) as set forth in Section VI. of CMS' Coverage with Evidence Development Guidance Document, published August 7. 2024 (the "CED Guidance Document") https://www.cms.gov/medicare-coverage-database/view/medicare-coverage-document.aspx?mcdid=38
+
+
+1. Sponsor/Investigator: The study is conducted by sponsors/investigators with the resources and skills to complete it successfully.
+
+2. Milestones: A written plan is in place that describes a detailed schedule for completion of key study milestones, including study initiation, enrollment progress, interim results reporting, and results reporting, to ensure timely completion of the CED process.
+
+3. Study Protocol: The CED study is registered with ClinicalTrials.gov and a complete final protocol, including the statistical analysis plan, is delivered to CMS prior to study initiation. The published protocol includes sufficient detail to allow a judgment of whether the study is fit-for-purpose and whether reasonable efforts will be taken to minimize the risk of bias. Any changes to approved study protocols should be explained and publicly reported.
+
+4. Study Context: The rationale for the study is supported by scientific evidence and study results are expected to fill the specified CMS-identified evidence deficiency and provide evidence sufficient to assess health outcomes.
+
+5. Study Design: The study design is selected to safely and efficiently generate valid evidence of health outcomes. The sponsors/investigators minimize the impact of confounding and biases on inferences through rigorous design and appropriate statistical techniques. If a contemporaneous comparison group is not included, this choice should be justified, and the sponsors/investigators discuss in detail how the design contributes useful information on issues such as durability or adverse event frequency that are not clearly answered in comparative studies.
+
+6. Study Population: The study population reflects the demographic and clinical diversity among the Medicare beneficiaries who are the intended population of the intervention, particularly when there is good clinical or scientific reason to expect that the results observed in premarket studies might not be observed in older adults or subpopulations identified by other clinical or demographic factors.
+
+7. Subgroup Analyses: The study protocol explicitly discusses beneficiary subpopulations affected by the item or service under investigation, particularly traditionally underrepresented groups in clinical studies, how the inclusion and exclusion requirements effect enrollment of these populations, and a plan for the retention and reporting of said populations in the trial. In the protocol, the sponsors/investigators describe plans for analyzing demographic subpopulations as well as clinically relevant subgroups as identified in existing evidence. Description of plans for exploratory analyses, as relevant subgroups emerge, are also included.
+
+8. Care Setting: When feasible and appropriate for answering the CED question, data for the study should come from beneficiaries in their expected sites of care.
+
+9. Health Outcomes: The primary health outcome(s) for the study are those important to patients and their caregivers and that are clinically meaningful. A validated surrogate outcome that reliably predicts these outcomes may be appropriate for some questions. Generally, when study sponsors propose using surrogate endpoints to measure outcomes, they should cite validation studies published in peer-reviewed journals to provide a rationale for assuming these endpoints predict the health outcomes of interest. The cited validation studies should be longitudinal and demonstrate a statistical association between the surrogate endpoint and the health outcomes it is thought to predict.
+
+10. Objective Success Criteria: In consultation with CMS and AHRQ, sponsors/investigators establish an evidentiary threshold for the primary health outcome(s) to demonstrate clinically meaningful differences with sufficient precision.
+
+11. Data Quality: The data are generated or selected with attention to provenance, bias, completeness, accuracy, sufficiency of duration of observation to demonstrate durability of health outcomes, and sufficiency of sample size as required by the question.
+
+
+12. Construct Validity: Sponsors/investigators provide information about the validity of drawing warranted conclusions about the study population, primary exposure(s) (intervention, control), health outcome measures, and core covariates when using either primary data collected for the study about individuals or proxies of the variables of interest, or existing (secondary) data about individuals or proxies of the variables of interest.
+
+13. Sensitivity Analyses: Sponsors/investigators will demonstrate robustness of results by conducting prespecified sensitivity testing using alternative variable or model specifications as appropriate.
+
+14. Reporting: Final results are provided to CMS and submitted for publication or reported in a publicly accessible manner within 12 months of the study's primary completion date. Wherever possible, the study is submitted for peer review with the goal of publication using a reporting guideline appropriate for the study design and structured to enable replication. If peer-reviewed publication is not possible, results may also be published in an online publicly accessible registry dedicated to the dissemination of clinical trial information such as ClinicalTrials.gov, or in journals willing to publish in abbreviated format (e.g., for studies with incomplete results).
+
+15. Sharing: The sponsors/investigators commit to making study data publicly available by sharing data, methods, analytic code, and analytical output with CMS or with a CMS-approved third party. The study should comply with all applicable laws regarding subject privacy, including 45 CFR § 164.514 within the regulations promulgated under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) and 42 CFR, Part 2: Confidentiality of Substance Use Disorder Patient Records.
+
+16. Governance: The protocol describes the information governance and data security provisions that have been established to satisfy Federal security regulations issued pursuant to HIPAA and codified at 45 CFR Parts 160 and 164 (Subparts A & C), United States Department of Health and Human Services (HHS) regulations at 42 CFR, Part 2: Confidentiality of Substance Use Disorder Patient and HHS regulations at 45 CFR Part 46, regarding informed consent for clinical study involving human subjects. In addition to the requirements under 42 CFR and 45 CFR, studies that are subject to FDA regulation must also comply with regulations at 21 CFR Parts 50 and 56 regarding the protection of human subjects and institutional review boards, respectively.
+
+17. Legal: The study is not designed to exclusively test toxicity or disease pathophysiology in healthy individuals, although it is acceptable for a study to test a reduction in toxicity of a product relative to standard of care or an appropriate comparator. For studies that involve researching the safety and effectiveness of new drugs and biological products aimed at treating life-threatening or severely debilitating diseases, refer to additional requirements set forth in 21 CFR § 312.81(a).
+
+Consistent with section 1142 of the Social Security Act, AHRQ supports clinical research studies that CMS determines meet all the criteria and standards identified above.
+
+C. Other Uses of CCM
+
+ - CCM for HF management is not covered for patients outside of a CMS-approved study.
+
+ - Nothing in this NCD would preclude coverage of CCM for HF management through NCD 310.1 (Clinical Trial Policy) or through the Investigational Device Exemption (IDE) Policy.
+
+(This NCD last reviewed October 2025.)
+
+==============================================================================
+NCD 20.40 -- Renal Denervation (RDN) for Uncontrolled Hypertension
+Version 1 | Effective 2025-10-28 | Implementation 2026-04-06
+Transmittal 13522 (https://www.cms.gov/files/document/r13522NCD.pdf)
+==============================================================================
+
+B. Coverage Criteria
+
+The Centers for Medicare & Medicaid Services (CMS) covers radiofrequency renal denervation (rfRDN) and ultrasound renal denervation (uRDN) (collectively RDN) for uncontrolled hypertension when furnished according to a Food and Drug Administration (FDA) market-authorized indication and all the following conditions are met:
+
+
+1. Patient Criteria
+
+The patient meets all the following criteria:
+
+(a) Diagnosis of uncontrolled hypertension (≥ 140 mm Hg systolic blood pressure and > 90 mm Hg diastolic blood pressure) despite active management by a clinician with primary responsibility for blood pressure management.
+
+(b) Uncontrolled hypertension diagnosed using either ambulatory blood pressure monitoring or serial home blood pressure readings.
+
+(c) On lifestyle modifications and stable doses of maximally tolerated guideline-directed medical therapy (GDMT), with assessment of adherence to the prescribed regimen, for at least six weeks before referral for RDN.
+
+(d) As clinically appropriate, secondary hypertension must be evaluated and treated before determining that blood pressure remains uncontrolled. At a minimum, patients must be screened for primary aldosteronism, obstructive sleep apnea, and drug or alcohol induced hypertension before referral to RDN.
+
+(e) The patient has no contraindications to RDN, consistent with the FDA labeling of the device used.
+
+
+(f) The primary clinicians must coordinate management of the patient for a minimum of six months before referral for RDN, during which the patient had at least three encounters, with no more than two of the three encounters being virtual.
+
+
+(g) No prior RDN procedure.
+
+2. Physician Criteria
+
+ RDN is furnished by clinicians who meet the following criteria, as applicable:
+
+(a) Clinicians referring Medicare beneficiaries must have longitudinal responsibility for hypertension management.
+
+(b) Physicians performing RDN must have interventional and endovascular skills to perform effective RDN treatments. Additionally, they must be able to manage potential complications either themselves or with institutional support from colleagues who are immediately available to assist in emergency management.
+
+(c) Physicians performing RDN without prior endovascular training or renovascular expertise must complete at least ten supervised cases of diagnostic/therapeutic renovascular procedures, half as primary operator. Additionally, they must complete at least five proctored RDN cases with each approved device used in their practice.
+
+(d) Physicians performing RDN with prior endovascular training and active endovascular experience must complete at least five proctored RDN cases with each approved device used in their practice.
+
+3. Facility Criteria
+
+The RDN device and related items and services are furnished at facilities meeting the following criteria:
+
+(a) Facilities performing RDN must have a hypertension program with contributions from a hypertension clinician with longitudinal patient management responsibility, a hypertension navigator, and access to relevant medical specialties (e.g., internal medicine, endocrinology, sleep medicine, cardiology, and nephrology) as appropriate.
+
+(b) Preprocedural imaging capabilities (e.g., ultrasound, Computed Tomography Angiography, Magnetic Resonance Angiography).
+
+(c) An appropriate interventional cardiology or radiology suite.
+
+4. CED Study Criteria
+
+
+The RDN device and related items and services are furnished in the context of a CMS-approved CED study. CMS-approved CED study protocols must: include only those patients who meet the criteria in section B.1; furnish items and services only through practitioners who meet the criteria in section B.2; furnish items and services at facilities meeting the criteria in section B.3; and include all of the following:
+
+(a) One or more primary outcomes of ambulatory systolic blood pressure (ASBP), ambulatory diastolic blood pressure (ADBP), home systolic blood pressure (HSBP), home diastolic blood pressure (HDBP), office systolic blood pressure (OSBP), office diastolic blood pressure (ODBP), worsening renal function, cerebrovascular accident, acute myocardial infarction, incidence of new-onset heart failure, cardiovascular mortality, all-cause mortality, or a composite of these, through a minimum of 24 months. Each component of a composite outcome must be individually reported.
+
+
+(b) An active comparator.
+
+
+(c) Design sufficient for subgroup analyses by:
+
+ - Age (Stratify
+
+(d)In addition, CMS-approved CED studies must adhere to the scientific standards (criteria 1-17 below) that have been identified by the Agency for Healthcare Research and Quality (AHRQ) as set forth in Section VI. of CMS' Coverage with Evidence Development Guidance Document, published August 7, 2024 (the "CED Guidance Document").
+
+ - Sponsor/Investigator: The study is conducted by sponsors/investigators with the resources and skills to complete it successfully.
+
+ - Milestones: A written plan is in place that describes a detailed schedule for completion of key study milestones, including study initiation, enrollment progress, interim results reporting, and results reporting, to ensure timely completion of the CED process.
+
+ - Study Protocol: The CED study is registered with ClinicalTrials.gov and a complete final protocol, including the statistical analysis plan, is delivered to CMS prior to study initiation. The published protocol includes sufficient detail to allow a judgment of whether the study is fit-for-purpose and whether reasonable efforts will be taken to minimize the risk of bias. Any changes to approved study protocols should be explained and publicly reported.
+
+ - Study Context: The rationale for the study is supported by scientific evidence and study results are expected to fill the specified CMS-identified evidence deficiency and provide evidence sufficient to assess health outcomes.
+
+ - Study Design: The study design is selected to safely and efficiently generate valid evidence of health outcomes. The sponsors/investigators minimize the impact of confounding and biases on inferences through rigorous design and appropriate statistical techniques. If a contemporaneous comparison group is not included, this choice should be justified, and the sponsors/investigators discuss in detail how the design contributes useful information on issues such as durability or adverse event frequency that are not clearly answered in comparative studies.
+
+
+ - Study Population: The study population reflects the demographic and clinical diversity among the Medicare beneficiaries who are the intended population of the intervention, particularly when there is good clinical or scientific reason to expect that the results observed in premarket studies might not be observed in older adults or subpopulations identified by other clinical or demographic factors.
+
+ - Subgroup Analyses: The study protocol explicitly discusses beneficiary subpopulations affected by the item or service under investigation, particularly traditionally underrepresented groups in clinical studies, how the inclusion and exclusion requirements effect enrollment of these populations, and a plan for the retention and reporting of said populations in the trial. In the protocol, the sponsors/investigators describe plans for analyzing demographic subpopulations as well as clinically-relevant subgroups as identified in existing evidence. Description of plans for exploratory analyses, as relevant subgroups emerge, are also included.
+
+
+ - Care Setting: When feasible and appropriate for answering the CED question, data for the study should come from beneficiaries in their expected sites of care.
+
+
+ - Health Outcomes: The primary health outcome(s) for the study are those important to patients and their caregivers and that are clinically meaningful. A validated surrogate outcome that reliably predicts these outcomes may be appropriate for some questions. Generally, when study sponsors propose using surrogate endpoints to measure outcomes, they should cite validation studies published in peer-reviewed journals to provide a rationale for assuming these endpoints predict the health outcomes of interest. The cited validation studies should be longitudinal and demonstrate a statistical association between the surrogate endpoint and the health outcomes it is thought to predict.
+
+
+ - Objective Success Criteria: In consultation with CMS and AHRQ, sponsors/investigators establish an evidentiary threshold for the primary health outcome(s) so as to demonstrate clinically meaningful differences with sufficient precision.
+
+
+ - Data Quality: The data are generated or selected with attention to provenance, bias, completeness, accuracy, sufficiency of duration of observation to demonstrate durability of health outcomes, and sufficiency of sample size as required by the question.
+
+
+ - Construct Validity: Sponsors/investigators provide information about the validity of drawing warranted conclusions about the study population, primary exposure(s) (intervention, control), health outcome measures, and core covariates when using either primary data collected for the study about individuals or proxies of the variables of interest, or existing (secondary) data about individuals or proxies of the variables of interest.
+
+
+ - Sensitivity Analyses: Sponsors/investigators will demonstrate robustness of results by conducting pre-specified sensitivity testing using alternative variable or model specifications as appropriate.
+
+
+ - Reporting: Final results are provided to CMS and submitted for publication or reported in a publicly accessible manner within 12 months of the study's primary completion date. Wherever possible, the study is submitted for peer review with the goal of publication using a reporting guideline appropriate for the study design and structured to enable replication. If peer-reviewed publication is not possible, results may also be published in an online publicly accessible registry dedicated to the dissemination of clinical trial information such as ClinicalTrials.gov, or in journals willing to publish in abbreviated format (e.g., for studies with incomplete results).
+
+
+ - Sharing: The sponsors/investigators commit to making study data publicly available by sharing data, methods, analytic code, and analytical output with CMS or with a CMS-approved third party. The study should comply with all applicable laws regarding subject privacy, including 45 CFR § 164.514 within the regulations promulgated under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) and 42 CFR, Part 2: Confidentiality of Substance Use Disorder Patient Records.
+
+
+ - Governance: The protocol describes the information governance and data security provisions that have been established to satisfy Federal security regulations issued pursuant to HIPAA and codified at 45 CFR Parts 160 and 164 (Subparts A & C), United States Department of Health and Human Services (HHS) regulations at 42 CFR, Part 2: Confidentiality of Substance Use Disorder Patient and HHS regulations at 45 CFR Part 46, regarding informed consent for clinical study involving human subjects. In addition to the requirements under 42 CFR and 45 CFR, studies that are subject to FDA regulation must also comply with regulations at 21 CFR Parts 50 and 56 regarding the protection of human subjects and institutional review boards, respectively.
+
+
+ - Legal: The study is not designed to exclusively test toxicity or disease pathophysiology in healthy individuals, although it is acceptable for a study to test a reduction in toxicity of a product relative to standard of care or an appropriate comparator. For studies that involve researching the safety and effectiveness of new drugs and biological products aimed at treating life-threatening or severelydebilitating diseases, refer to additional requirements set forth in 21 CFR § 312.81(a).
+
+Consistent with section 1142 of the Act, AHRQ supports clinical research studies that CMS determines meet all the criteria and standards identified above.
+
+
+C. National Non-Covered Indications
+
+RDN is not covered for patients outside of a CMS-approved study.
+
+D. Other
+
+Nothing in this NCD would preclude coverage of RDN through NCD 310.1 (Clinical Trial Policy) or through the Investigational Device Exemption (IDE) Policy.
+
+ (This NCD last reviewed October 28, 2025)
