@@ -14,7 +14,7 @@ the same queries:
 | **B** | routing + plain dense retrieval — what `example/` in this repo does | **86.00%** |
 | **C** | no retrieval | 0.00% \* |
 
-*n = 250, a seeded random sample of a 3,300-query suite (seed 20260831). Measured
+*n = 250, a seeded random sample of the private evaluation suite (seed 20260831). Measured
 2026-08-31. Scoring is token-overlap recall against ground truth at a lenient
 threshold — retrieval answers paraphrase heavily, and an exact-match scorer measures
 phrasing rather than correctness.*
@@ -70,14 +70,13 @@ entirely false finding.
 
 ## Sampling
 
-n = 250 is a seeded random sample, not the first 250 queries. The suite is not
+n = 250 is a seeded random sample, not the first 250 drawn in file order. The suite is not
 randomly ordered: its first 500 entries contain *all* of one store's queries and
 over-weight another at 23% against its true 16%. The seeded draw reproduces the
 population within 2 percentage points per store.
 
-The full 3,300-query run was not executed — Tier A runs at roughly one second per
-query, so a complete pass is about 55 minutes and exceeded the available execution
-window. **What is reported is what was run**, with its size and seed stated, rather
+A full-suite run was not executed — Tier A runs at roughly one second per query, so
+a complete pass is well over the available execution window. **What is reported is what was run**, with its size and seed stated, rather
 than a full-suite figure that was not.
 
 ## This is a new baseline
