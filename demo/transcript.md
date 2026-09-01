@@ -87,18 +87,19 @@ was measured.
 
 **Confidence: uncertain — gap raised** · 5 passages · anchors: none
 
-> IRS Form 990 financial profile — a *differently named* hospital. Source:
-> ProPublica Nonprofit Explorer. Most recent filing: tax year 2023 […]
+> A public financial filing for a *differently named* hospital — one whose name
+> differs from the one asked about by a single word. […]
 >
-> *(Trimmed: the passage continues with that organisation's public financial
-> summary. The hospital's name and identifiers are withheld here — the source is
-> public, but reproducing a named organisation's record in a demo is not
-> necessary to make the point.)*
+> *(Trimmed: the passage continues with that organisation's financial summary.
+> The organisation's name, its identifiers, and the dataset the filing came from
+> are all withheld. The source is public and none of it is sensitive, but naming
+> it would disclose corpus composition that is not needed to make the point.)*
 
 The second kind of failure, and a different one from query 4. Facility-level
 infection counts for a specific quarter are data this system has never held. There
 is nothing to retrieve, so retrieval reached for the nearest thing in embedding
-space — a *similarly named* hospital's tax filing.
+space -- an unrelated financial record belonging to a similarly named
+organisation.
 
 An answer generated from that passage would have been confidently, fluently, and
 completely wrong. The gap signal is what stops it.
