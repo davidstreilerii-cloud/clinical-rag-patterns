@@ -1,0 +1,29 @@
+clinical-rag-patterns
+Copyright 2026 David Streiler
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-------------------------------------------------------------------------
+
+NOTE ON THE CORPUS
+
+The documents in example/corpus/ are derived from U.S. Centers for Medicare &
+Medicaid Services (CMS) public datasets. U.S. government works are not subject
+to copyright protection in the United States (17 U.S.C. Section 105). Each file
+carries a provenance header naming its source URL, retrieval date, publication
+date, and the exact subset taken.
+
+The corpus deliberately excludes Local Coverage Determination policy bodies,
+which carry AMA-licensed CPT content. The coverage documents here are indexes
+only -- code, title, contractor, effective date -- and contain no procedure
+codes and no coverage criteria.
